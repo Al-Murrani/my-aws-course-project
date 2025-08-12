@@ -1,5 +1,5 @@
 {
-    "name": "AWS SAM + Node.js Dev",
+    "name": "AWS SAM + CDK + Node.js Dev Container",
     "build": {
       "dockerfile": "Dockerfile"
     },
