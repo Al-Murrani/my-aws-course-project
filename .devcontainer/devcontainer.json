@@ -1,0 +1,24 @@
+{
+    "name": "AWS SAM + Node.js Dev",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "amazonwebservices.aws-toolkit-vscode",
+          "ms-azuretools.vscode-docker",
+          "dbaeumer.vscode-eslint"
+        ]
+      }
+    },
+    "features": {
+      "ghcr.io/devcontainers/features/node:1": {
+        "version": "lts"
+      },
+      "ghcr.io/devcontainers/features/aws-cli:1": {},
+      "ghcr.io/devcontainers-contrib/features/aws-sam-cli:1": {}
+    },
+    "postCreateCommand": "sam --version && aws --version && node --version"
+  }
+  
