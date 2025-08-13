@@ -1,24 +1,15 @@
 {
-    "name": "AWS SAM + CDK + Node.js Dev Container",
-    "build": {
-      "dockerfile": "Dockerfile"
-    },
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "amazonwebservices.aws-toolkit-vscode",
-          "ms-azuretools.vscode-docker",
-          "dbaeumer.vscode-eslint"
-        ]
-      }
-    },
-    "features": {
-      "ghcr.io/devcontainers/features/node:1": {
-        "version": "lts"
-      },
-      "ghcr.io/devcontainers/features/aws-cli:1": {},
-      "ghcr.io/devcontainers-contrib/features/aws-sam-cli:1": {}
-    },
-    "postCreateCommand": "sam --version && aws --version && node --version"
+  "name": "AWS SAM + CDK + Node.js Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18-bullseye",
+  "features": {
+    "aws-cli": "latest"
+  },
+  "postCreateCommand": "npm install -g aws-cdk && curl -Lo install.sh https://raw.githubusercontent.com/aws/aws-sam-cli/main/scripts/install/install.sh && chmod +x install.sh && ./install.sh --yes && rm install.sh && aws --version && sam --version && cdk --version",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "amazonwebservices.aws-toolkit-vscode"
+      ]
+    }
   }
-  
+}
